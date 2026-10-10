@@ -1,0 +1,47 @@
+{
+  "name": "@opencal/spec",
+  "version": "0.1.0",
+  "description": "OpenCal: a provider-agnostic interface for calendar services, built on JSCalendar (RFC 8984). Types only.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iceglober/opencal.git"
+  },
+  "keywords": [
+    "calendar",
+    "jscalendar",
+    "rfc8984",
+    "icalendar",
+    "caldav",
+    "spec",
+    "interface",
+    "scheduling",
+    "free-busy"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "SPEC.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node --test \"examples/**/*.test.ts\"",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.8.0"
+  },
+  "engines": {
+    "node": ">=22.18"
+  }
+}
